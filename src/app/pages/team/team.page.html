@@ -9,8 +9,8 @@
 
 <ion-content padding>
 
-  <div *ngIf="content">
-    <div [innerHTML]="content.content.rendered" padding></div>
+  <div *ngIf="content" class="content">
+    <div [innerHtml]="content"></div>
   </div>
 
 </ion-content>

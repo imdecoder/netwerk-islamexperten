@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/services/wordpress.service';
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.page.html',
-  styleUrls: ['./team.page.scss'],
+  styleUrls: ['/team.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TeamPage implements OnInit {
   content: any;
@@ -13,7 +14,8 @@ export class TeamPage implements OnInit {
 
   ngOnInit() {
     this.wp.getPage(180).subscribe(res => {
-      this.content = res;
+      this.content = res['content']['rendered'];
+      console.log(this.content);
     });
   }
 

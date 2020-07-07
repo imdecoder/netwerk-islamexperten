@@ -1,0 +1,89 @@
+.content {
+    padding: 30px;
+}
+
+.tmm .tmm_wrap {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.tmm_two_containers_tablet {
+    display: block;
+    clear: both;
+}
+
+.tmm .tmm_container {
+    display: inline;
+}
+
+.tmm .tmm_container:last-child {
+    display: block;
+    text-align: center !important;
+}
+
+.tmm_member {
+    border-top: red solid 5px!important;
+}
+
+.tmm .tmm_member {
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: auto;
+    float: left;
+    position: relative;
+    text-align: center;
+    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.04);
+    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.04);
+    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.04);
+    border-top: 5px solid lightgrey;
+    border-left: solid 1px #eee;
+    border-right: solid 1px #eee;
+    border-bottom: 5px solid whitesmoke;
+    background: white;
+    box-sizing: border-box;
+}
+
+.tmm .tmm_3_columns .tmm_member {
+    width: 29%;
+    margin-right: 2.16%;
+    margin-left: 2.16%;
+    margin-top: 100px;
+    margin-bottom: 25px;
+}
+
+.tmm .tmm_member, .tmm .tmm_1_columns .tmm_member, .tmm .tmm_2_columns .tmm_member, .tmm .tmm_3_columns .tmm_member, .tmm .tmm_4_columns .tmm_member, .tmm .tmm_5_columns .tmm_member {
+    width: 96%;
+    margin: 0 2%;
+    margin-top: 110px;
+    margin-bottom: 25px;
+}
+
+.tmm .tmm_container:last-child .tmm_member {
+    float: none !important;
+}
+
+.tmm .tmm_member .tmm_photo {
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover !important;
+    width: 60%;
+    padding-bottom: 60%;
+    -webkit-box-shadow: 2px 0px 1px 0px rgba(0,0,0,0.05);
+    -moz-box-shadow: 2px 0px 1px 0px rgba(0,0,0,0.05);
+    box-shadow: 2px 0px 1px 0px rgba(0,0,0,0.05);
+    border-radius: 60px !important;
+    margin-top: -30%;
+    border: none!important;
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+    height: 175px!important;
+}
+
+.tmm .tmm_member .tmm_photo, .tmm .tmm_1_columns .tmm_member .tmm_photo, .tmm .tmm_2_columns .tmm_member .tmm_photo, .tmm .tmm_3_columns .tmm_member .tmm_photo, .tmm .tmm_4_columns .tmm_member .tmm_photo, .tmm .tmm_5_columns .tmm_member .tmm_photo {
+    width: 45%;
+    padding-bottom: 45%;
+    margin-top: -24%;
+}
