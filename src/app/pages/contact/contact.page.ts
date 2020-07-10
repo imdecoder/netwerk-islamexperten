@@ -13,7 +13,7 @@ export class ContactPage implements OnInit {
 
   ngOnInit() {
     this.wp.getPage(127).subscribe(res => {
-      this.content = res;
+      this.content = null;
     });
   }
 

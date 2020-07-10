@@ -37,48 +37,48 @@ export class AppComponent {
     {
       title: "Aanbod",
       url: "/workshops",
-      icon: "newspaper-outline"
+      icon: "create-outline"
     },
     {
       title: "Activiteiten",
       url: "/calendar",
-      icon: "newspaper-outline"
+      icon: "calendar-outline"
     },
     {
       title: "Media",
-      icon: "newspaper-outline",
+      icon: "globe-outline",
       children: [
         {
           title: "Foto's",
           url: "photos",
-          icon: "people-outline"
+          icon: "images-outline"
         },
         {
           title: "Videos",
           url: "videos",
-          icon: "shield-checkmark-outline"
+          icon: "videocam-outline"
         },
         {
           title: "Live Sessies",
           url: "livesessions",
-          icon: "shield-checkmark-outline"
+          icon: "radio-outline"
         },
         {
           title: "Lesmateriaal",
           url: "course",
-          icon: "shield-checkmark-outline"
+          icon: "document-attach-outline"
         }
       ]
     },
     {
       title: "FAQ",
       url: "/faq",
-      icon: "newspaper-outline"
+      icon: "help-outline"
     },
     {
       title: "Contact",
       url: "/contact",
-      icon: "newspaper-outline"
+      icon: "mail-outline"
     }
   ];
 

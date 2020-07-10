@@ -12,7 +12,7 @@ export class FaqPage implements OnInit {
   constructor(private wp: WordpressService) { }
 
   ngOnInit() {
-    this.wp.getPage(127).subscribe(res => {
+    this.wp.getPage(16).subscribe(res => {
       this.content = res;
     });
   }

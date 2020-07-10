@@ -4,7 +4,7 @@ import { WordpressService } from 'src/app/services/wordpress.service';
 @Component({
   selector: 'app-team',
   templateUrl: './team.page.html',
-  styleUrls: ['/team.page.scss'],
+  styleUrls: ['./team.page.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class TeamPage implements OnInit {

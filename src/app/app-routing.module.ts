@@ -44,8 +44,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/livesessions/livesessions.module').then( m => m.LivesessionsPageModule)
   },
   {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then( m => m.PagesPageModule)
+    path: 'course',
+    loadChildren: () => import('./pages/course/course.module').then( m => m.CoursePageModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./pages/faq/faq.module').then( m => m.FaqPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
   }
 ];
 
