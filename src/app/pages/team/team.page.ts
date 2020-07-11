@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { WordpressService } from 'src/app/services/wordpress.service';
 
 @Component({
@@ -10,12 +11,14 @@ import { WordpressService } from 'src/app/services/wordpress.service';
 export class TeamPage implements OnInit {
   content: any;
 
-  constructor(private wp: WordpressService) { }
+  constructor(
+      private wp: WordpressService,
+      private sanitizer: DomSanitizer
+    ) { }
 
   ngOnInit() {
     this.wp.getPage(180).subscribe(res => {
-      this.content = res['content']['rendered'];
-      console.log(this.content);
+      this.content = this.sanitizer.bypassSecurityTrustHtml(res['content']['rendered']);
     });
   }
 
