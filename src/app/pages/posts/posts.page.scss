@@ -1,0 +1,35 @@
+table a, table a:hover, table a:focus, a, a:hover, a:focus, dl dd a, dl dd a:hover, dl dd a:focus {
+    color: #ce1b28;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+img {
+    height: 250px !important;
+}
+
+p {
+    font-size: 12px !important;
+}
+
+ion-card {
+    margin-bottom: 30px;
+}
+
+ion-card:last-child {
+    margin-bottom: 0 !important;
+}
+
+ion-card-title {
+    font-size: 15px;
+}
+
+ion-card-subtitle {
+    font-size: 13px;
+}
+
+.has-text-align-center {
+    text-align: center !important;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/services/wordpress.service';
 import { Router } from '@angular/router';
 
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-posts',
   templateUrl: './posts.page.html',
   styleUrls: ['./posts.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PostsPage implements OnInit {
   posts = [];
