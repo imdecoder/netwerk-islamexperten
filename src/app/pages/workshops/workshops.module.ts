@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { WorkshopsPageRoutingModule } from './workshops-routing.module';
 
 import { WorkshopsPage } from './workshops.page';
+import { ModalPageModule } from '../modal/modal.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WorkshopsPageRoutingModule
+    WorkshopsPageRoutingModule,
+    ModalPageModule
   ],
   declarations: [WorkshopsPage]
 })
-export class WorkshopsPageModule {}
+export class WorkshopsPageModule { }

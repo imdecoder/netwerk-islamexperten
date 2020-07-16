@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/services/wordpress.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { first } from 'rxjs/operators';
+import * as $ from 'jquery';
+import { ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-workshops',
@@ -14,17 +15,26 @@ export class WorkshopsPage implements OnInit {
 
   constructor(
     private wp: WordpressService,
-    private sanitizer: DomSanitizer
-    ) { }
+    private modalController: ModalController
+  ) { }
 
   ngOnInit() {
     this.wp.getPage(254).subscribe(res => {
-      this.content = this.sanitizer.bypassSecurityTrustHtml(res['content']['rendered']);
+      this.content = res['content']['rendered'];
     });
   }
 
-  ionViewDidLoad(){
-    console.log("loaddddd");
-  }
+  ngAfterViewInit() {
+    $(document).on('click', 'div.flip-card', async function (event) {
+      var img = $(this).find('img').attr('src');
 
+      var modal = this.modalController.create('ModalPage');
+
+      let modald: HTMLIonModalElement = await this.modalController.create({
+        component: ModalPage
+      });
+
+      await modal.present();
+    });
+  }
 }
