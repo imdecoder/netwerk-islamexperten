@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/services/wordpress.service';
 import * as $ from 'jquery';
-import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-workshops',
@@ -13,8 +12,7 @@ export class WorkshopsPage implements OnInit {
   content: any;
 
   constructor(
-    private wp: WordpressService,
-    private modalController: ModalController
+    private wp: WordpressService
   ) { }
 
   ngOnInit() {
@@ -24,16 +22,41 @@ export class WorkshopsPage implements OnInit {
   }
 
   ngAfterViewInit() {
+    const modalElement = document.createElement('ion-modal');
+    modalElement.component = 'modal-page';
+    modalElement.cssClass = 'my-modal-class';
+    modalElement.innerHTML = `
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal Header</ion-title>
+          <ion-buttons slot="primary">
+            <ion-button (click)="dismissModal()">
+              <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        Modal Content
+      </ion-content>`;
+
     $(document).on('click', 'div.flip-card', async function (event) {
       var img = $(this).find('img').attr('src');
 
-      var modal = this.modalController.create('ModalPage');
+      modalElement.componentProps = {
+        'firstname': 'Emin Arif',
+        'lastname': 'Pirinç',
+        'img': img
+      };
 
-      let modald: HTMLIonModalElement = await this.modalController.create({
-        component: 'ModalPage'
-      });
-
-      await modal.present();
+      console.log(modalElement.componentProps);
+    
+      document.body.appendChild(modalElement);
+      return modalElement.present();
     });
+
+    async function dismissModal() {
+      await modalElement.dismiss();
+    }
   }
 }
