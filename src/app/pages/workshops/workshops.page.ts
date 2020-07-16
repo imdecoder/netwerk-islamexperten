@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/services/wordpress.service';
 import * as $ from 'jquery';
 import { ModalController } from '@ionic/angular';
-import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-workshops',
@@ -31,7 +30,7 @@ export class WorkshopsPage implements OnInit {
       var modal = this.modalController.create('ModalPage');
 
       let modald: HTMLIonModalElement = await this.modalController.create({
-        component: ModalPage
+        component: 'ModalPage'
       });
 
       await modal.present();
