@@ -9,7 +9,7 @@
 
 <ion-content padding>
 
-  <div *ngIf="content" class="ion-padding">
+  <div *ngIf="content" class="ion-padding" (click)="presentModal($event)">
     <div [innerHTML]="content" padding></div>
   </div>
 

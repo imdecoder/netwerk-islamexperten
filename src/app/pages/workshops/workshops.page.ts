@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/services/wordpress.service';
 import * as $ from 'jquery';
+import { ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-workshops',
@@ -12,7 +14,8 @@ export class WorkshopsPage implements OnInit {
   content: any;
 
   constructor(
-    private wp: WordpressService
+    private wp: WordpressService,
+    public modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
@@ -21,42 +24,21 @@ export class WorkshopsPage implements OnInit {
     });
   }
 
-  ngAfterViewInit() {
-    const modalElement = document.createElement('ion-modal');
-    modalElement.component = 'modal-page';
-    modalElement.cssClass = 'my-modal-class';
-    modalElement.innerHTML = `
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Modal Header</ion-title>
-          <ion-buttons slot="primary">
-            <ion-button (click)="dismissModal()">
-              <ion-icon slot="icon-only" name="close"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        Modal Content
-      </ion-content>`;
-
-    $(document).on('click', 'div.flip-card', async function (event) {
-      var img = $(this).find('img').attr('src');
-
-      modalElement.componentProps = {
-        'firstname': 'Emin Arif',
-        'lastname': 'Pirinç',
-        'img': img
-      };
-
-      console.log(modalElement.componentProps);
+  async presentModal(event: any) {
+    var imgSrc = event.srcElement.src;
+    var startIndex = imgSrc.indexOf("Dia");
+    var stopIndex = imgSrc.indexOf(".jpg");
+    var diaNumber = imgSrc.substring(startIndex + 3, stopIndex);
     
-      document.body.appendChild(modalElement);
-      return modalElement.present();
+    const modal = await this.modalCtrl.create({
+      component: ModalPage,
+      cssClass: 'my-custom-class',
+      componentProps: {
+        'img': imgSrc,
+        'diaNumber': diaNumber
+      }
     });
 
-    async function dismissModal() {
-      await modalElement.dismiss();
-    }
+    return await modal.present();
   }
 }
