@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modal</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-img [src]="img"></ion-img>
+  </div>
+  <br>
+  <div class="ion-padding">
+    <div>
+      <ion-title>{{ title }}</ion-title>
+    </div>
+    <br>
+    <div [innerHtml]="content" padding></div>
+  </div>
+
+</ion-content>
